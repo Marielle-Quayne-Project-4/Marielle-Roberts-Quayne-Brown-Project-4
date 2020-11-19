@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p{
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+}

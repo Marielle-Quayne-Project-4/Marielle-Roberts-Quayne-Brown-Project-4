@@ -5,28 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resto Recco PRO</title>
     <!-- CSS Link -->
+    <link rel="stylesheet" href="./styles/styles.css">
     <!-- Google Fonts Link -->
+
     <!-- Font Awesome Link -->
     <script src="https://kit.fontawesome.com/5a7eceb3e6.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <!-- Landing spot -->
     <header>
+        
         <div class="wrapper">
             <div class="header-container">
+
                 <div class="title">
                     <h1>Resto Recco PRO</h1>
                     <p>Tired of endless google searches and scrolling through uber eats? We're here to end your search!</p>
                 </div>
+                <!-- need to be linked somewhere -->
                 <div class="social-media-icons">
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-instagram-square"></i>
-                    <i class="fab fa-snapchat-square"></i>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square"></i></a>
+                    <a href="#"><i class="fab fa-snapchat-square"></i></a>
                 </div>
 
                 <div class="start-button">
-                    <a href="#location">GET STARTED!</a>
+                    <a href="#location">Get started!</a>
                 </div>
             </div>
         </div>
@@ -34,12 +40,12 @@
 
     <main>
         <!-- "Where are you located?" -->
-        <section id="location">
+        <section id="location" class="location">
             <div class="wrapper">
                 <div class="location-title">
                     <h2>WHERE ARE YOU LOCATED?</h2>
                 </div>
-                <label for="city" class="sr-only" ></label>
+                <label for="city" class="sr-only" >Cities</label>
                 <!-- Q - the placeholder isn't working, help? -->
                 <select name="options" id="city" placeholder="Your city!">
                     <option value="ajax">AJAX</option>

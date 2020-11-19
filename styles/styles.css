@@ -164,3 +164,140 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  height: 100vh;
+  background-image: url("../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+header .wrapper, header .header-container {
+  height: inherit;
+}
+
+header .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+header .title {
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  text-align: center;
+  padding: 40px 50px;
+  color: #f0f0f0;
+}
+
+header .start-button a {
+  color: #f0f0f0;
+  background-color: #E76F51;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+header .social-media-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absol;
+}
+
+header i {
+  font-size: 4rem;
+  color: #f0f0f0;
+}
+
+.location {
+  background-color: #e9c46a;
+  height: 50vh;
+}
+
+.location .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}

@@ -1,0 +1,51 @@
+header{
+    height: 100vh;
+    background-image: url('../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    .wrapper, .header-container{
+        height: inherit;
+    }
+
+    .header-container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h1{
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+
+    .title{
+        max-width: 600px;
+        background-color: rgba(0,0,0, 0.6);
+        border-radius: 10px;
+        text-align: center;
+        padding: 40px 50px;
+        color: $light-color;
+    }
+
+    .start-button a{
+        color: $light-color;
+        background-color: $primary-accent;
+        border: 2px solid $light-color;
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+    }
+
+    .social-media-icons{
+        @include flex-center(column);
+        position: absol;
+    }
+    
+    i{
+        font-size: 4rem;
+        color: $light-color;
+    }
+}

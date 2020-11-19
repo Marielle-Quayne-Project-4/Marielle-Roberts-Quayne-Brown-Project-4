@@ -5,3 +5,11 @@ $primary-accent: #E76F51;
 $secondary-accent: #e9c46a;
 $dark-color: #0B132B;
 $light-color: #f0f0f0;
+
+
+@mixin flex-center($direction : row){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
