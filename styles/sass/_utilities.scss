@@ -7,8 +7,8 @@ $dark-color: #0B132B;
 $light-color: #f0f0f0;
 
 //Font Variables
-$sans: ‘Open Sans’, sans-serif;
-$rale: ‘Raleway’, sans-serif;
+$sans: 'Open Sans', sans-serif;
+$rale: 'Raleway', sans-serif;
 
 @mixin flex-center($direction : row){
     display: flex;
@@ -17,7 +17,7 @@ $rale: ‘Raleway’, sans-serif;
     flex-direction: $direction;
 }
 
-@mixin fontSpecs($font, $size, $weight, $color:$primaryFontColor ) {
+@mixin font-specs($font, $size, $weight, $color:$primaryFontColor ) {
     font-family: $font;
     font-size: $size;
     font-weight: $weight;

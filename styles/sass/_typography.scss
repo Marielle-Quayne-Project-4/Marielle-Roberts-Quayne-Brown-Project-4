@@ -2,20 +2,20 @@
 
 //Header
 h1 {
-    @include fontSpecs ($rale, 6rem, 500, $light-color);
+    @include font-specs ($rale, 6rem, 500, $light-color);
 }
 
 p {
-    @include fontSpecs ($sans, 3rem, 400, $light-color);
+    @include font-specs ($sans, 3rem, 400, $light-color);
 }
 
 .start-button {
-    @include fontSpecs ($sans, 2.8rem, 500, $light-color);
+    @include font-specs ($sans, 2.8rem, 500, $light-color);
 }
 
 //Main
 h2 {
-    @include fontSpecs ($rale, 3.3rem, 500, $light-color);
+    @include font-specs ($rale, 3.3rem, 500, $light-color);
 }
 
 select {

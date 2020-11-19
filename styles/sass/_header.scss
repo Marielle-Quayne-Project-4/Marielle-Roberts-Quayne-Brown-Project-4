@@ -43,7 +43,7 @@ header{
 
     .social-media-icons{
         @include flex-center(column);
-        position: fixed;
+        // position: absolute;
         display: flex;
         align-self: flex-start;
         background-color: $primary-accent;
