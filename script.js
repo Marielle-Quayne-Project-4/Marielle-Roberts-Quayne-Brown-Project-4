@@ -24,21 +24,47 @@ app.makeLocationApiRequest = (city) => {
     })
 }
 
+
+app.makeCuisineApiRequest = () => {
+    return $.ajax({
+        url: `${app.baseEndpoint}/cuisines`,
+        method: 'get',
+        dataType: 'json',
+        headers: {
+            'user-key': app.apiKey
+        },
+        data: {
+            lat: `${app.location.lat}`,
+            lon: `${app.location.lon}`
+        }
+    })
+}
+
+app.getCuisinesDetail = (promiseRes) => {
+    promiseRes.done((result) => {
+        console.log(result.cuisines)
+    })
+}
+
 app.getLocationDetails = (promiseObj) => {
     promiseObj.done((result) => {
         // destructuring the location object
         const {city_id, entity_id, title, latitude, longitude} = result.location_suggestions[0];
-        app.location = {
+        app.location =  {
             cityID: city_id,
             entityID: entity_id,
             cityName: title,
             lat: latitude,
             lon: longitude
         }      
-        console.log(app.location)  
+        const cuisinePromiseObj = app.makeCuisineApiRequest();
+
+        app.getCuisinesDetail(cuisinePromiseObj);
+
     }).fail((err) => {
         console.log(err);
     })
+    console.log(app.location);
 }
 
 
