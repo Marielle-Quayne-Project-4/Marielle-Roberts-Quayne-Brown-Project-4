@@ -273,7 +273,6 @@ header .social-media-icons {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absol;
 }
 
 header i {
