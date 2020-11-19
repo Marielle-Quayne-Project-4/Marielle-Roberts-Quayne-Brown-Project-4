@@ -1,10 +1,11 @@
 header{
     height: 100vh;
-    background-image: url('../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg');
+    background-image: url('../jay-wennington-N_Y88TWmGwA-unsplash.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    
     .wrapper, .header-container{
         height: inherit;
     }
@@ -17,12 +18,12 @@ header{
     }
 
     h1{
-        font-size: 5rem;
+        // font-size: 5rem;
         margin-bottom: 20px;
     }
 
     .title{
-        max-width: 600px;
+        max-width: 800px;
         background-color: rgba(0,0,0, 0.6);
         border-radius: 10px;
         text-align: center;
@@ -37,15 +38,21 @@ header{
         border-radius: 10px;
         padding: 10px 20px;
         text-transform: uppercase;
+        box-shadow: $secondary-color 10px 10px 10px;
     }
 
     .social-media-icons{
         @include flex-center(column);
-        position: absol;
+        position: fixed;
+        display: flex;
+        align-self: flex-start;
+        background-color: $primary-accent;
+        padding: 5px;
+        border: 2px solid $dark-color;
     }
     
     i{
         font-size: 4rem;
-        color: $light-color;
+        color: black;
     }
 }

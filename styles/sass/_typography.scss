@@ -1,0 +1,25 @@
+//Font Specifications
+
+//Header
+h1 {
+    @include fontSpecs ($rale, 6rem, 500, $light-color);
+}
+
+p {
+    @include fontSpecs ($sans, 3rem, 400, $light-color);
+}
+
+.start-button {
+    @include fontSpecs ($sans, 2.8rem, 500, $light-color);
+}
+
+//Main
+h2 {
+    @include fontSpecs ($rale, 3.3rem, 500, $light-color);
+}
+
+select {
+    font-size: 2.2rem;
+    padding: 2px;
+    color: $secondary-color;
+}

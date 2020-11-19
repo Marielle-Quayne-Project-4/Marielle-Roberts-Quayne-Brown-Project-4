@@ -1,8 +1,0 @@
-// select location section
-.location  {
-    background-color: $secondary-accent;
-    height: 50vh;
-    .wrapper{
-        @include flex-center(column);
-    }
-}

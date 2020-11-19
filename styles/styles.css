@@ -1,3 +1,4 @@
+@charset "UTF-8";
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block;
 }
@@ -165,6 +166,40 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: ‘Raleway’, sans-serif;
+  font-size: 6rem;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+p {
+  font-family: ‘Open Sans’, sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #f0f0f0;
+}
+
+.start-button {
+  font-family: ‘Open Sans’, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+h2 {
+  font-family: ‘Raleway’, sans-serif;
+  font-size: 3.3rem;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+select {
+  font-size: 2.2rem;
+  padding: 2px;
+  color: #001F54;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -172,10 +207,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 62.5%;
-}
-
-body {
-  font-size: 2rem;
 }
 
 ul {
@@ -209,7 +240,7 @@ figure {
 
 header {
   height: 100vh;
-  background-image: url("../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-image: url("../jay-wennington-N_Y88TWmGwA-unsplash.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -237,12 +268,11 @@ header .header-container {
 }
 
 header h1 {
-  font-size: 5rem;
   margin-bottom: 20px;
 }
 
 header .title {
-  max-width: 600px;
+  max-width: 800px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   text-align: center;
@@ -257,6 +287,8 @@ header .start-button a {
   border-radius: 10px;
   padding: 10px 20px;
   text-transform: uppercase;
+  -webkit-box-shadow: #001F54 10px 10px 10px;
+          box-shadow: #001F54 10px 10px 10px;
 }
 
 header .social-media-icons {
@@ -273,17 +305,47 @@ header .social-media-icons {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absol;
+  position: fixed;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  background-color: #E76F51;
+  padding: 5px;
+  border: 2px solid #0B132B;
 }
 
 header i {
   font-size: 4rem;
+  color: black;
+}
+
+.location-container {
+  max-width: 700px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  text-align: center;
+  padding: 70px 60px;
   color: #f0f0f0;
+  -webkit-box-shadow: #001F54 10px 10px 10px;
+          box-shadow: #001F54 10px 10px 10px;
 }
 
 .location {
-  background-color: #e9c46a;
-  height: 50vh;
+  background-color: #0B132B;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .location .wrapper {
@@ -300,4 +362,57 @@ header i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.location .location-title {
+  margin-bottom: 15px;
+}
+
+.cuisine-container {
+  max-width: 700px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  text-align: center;
+  padding: 70px 60px;
+  color: #f0f0f0;
+  -webkit-box-shadow: #001F54 10px 10px 10px;
+          box-shadow: #001F54 10px 10px 10px;
+}
+
+.cuisine {
+  background-color: #e9c46a;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cuisine .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cuisine .cuisine-title {
+  margin-bottom: 15px;
 }

@@ -1,0 +1,55 @@
+// LOCATION SECTION
+.location-container {
+    max-width: 700px;
+        background-color: rgba(0,0,0, 0.6);
+        border-radius: 10px;
+        text-align: center;
+        padding: 70px 60px;
+        color: $light-color;
+        box-shadow: $secondary-color 10px 10px 10px;
+}
+
+
+
+.location  {
+    background-color: $dark-color;
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    .wrapper{
+        @include flex-center(column);
+    }
+    .location-title {
+        margin-bottom: 15px;
+    }
+}
+
+//CUISINE SECTION
+.cuisine-container {
+    max-width: 700px;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    padding: 70px 60px;
+    color: $light-color;
+    box-shadow: $secondary-color 10px 10px 10px;
+}
+
+
+
+.cuisine  {
+    background-color: $secondary-accent;
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    .wrapper{
+        @include flex-center(column);
+    }
+    .cuisine-title {
+        margin-bottom: 15px;
+    }
+}

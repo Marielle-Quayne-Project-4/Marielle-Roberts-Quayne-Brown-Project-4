@@ -1,4 +1,4 @@
-//colors
+//Color
 $primary-color: #1150D0;
 $secondary-color: #001F54;
 $primary-accent: #E76F51;
@@ -6,6 +6,9 @@ $secondary-accent: #e9c46a;
 $dark-color: #0B132B;
 $light-color: #f0f0f0;
 
+//Font Variables
+$sans: ‘Open Sans’, sans-serif;
+$rale: ‘Raleway’, sans-serif;
 
 @mixin flex-center($direction : row){
     display: flex;
@@ -13,3 +16,10 @@ $light-color: #f0f0f0;
     align-items: center;
     flex-direction: $direction;
 }
+
+@mixin fontSpecs($font, $size, $weight, $color:$primaryFontColor ) {
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+};
