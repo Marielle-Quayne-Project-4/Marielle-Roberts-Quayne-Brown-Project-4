@@ -38,3 +38,23 @@ figure {
     width: 90%;
     margin: 0 auto;
 }
+
+//Hover & Focus States
+.a-btn:hover,
+.a-btn:focus {
+    background-color: $dark-color;
+}
+
+.read-more:hover,
+.read-more:focus {
+    color: $light-color;
+}
+
+i:hover,
+i:focus,
+footer a:hover,
+footer a:focus {
+   color: $primary-color;
+}
+
+

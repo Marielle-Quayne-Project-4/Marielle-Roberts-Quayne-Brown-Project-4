@@ -272,6 +272,23 @@ figure {
   margin: 0 auto;
 }
 
+.a-btn:hover,
+.a-btn:focus {
+  background-color: #0B132B;
+}
+
+.read-more:hover,
+.read-more:focus {
+  color: #f0f0f0;
+}
+
+i:hover,
+i:focus,
+footer a:hover,
+footer a:focus {
+  color: #1150D0;
+}
+
 header {
   height: 100vh;
   background-image: url("../jay-wennington-N_Y88TWmGwA-unsplash.jpg");
