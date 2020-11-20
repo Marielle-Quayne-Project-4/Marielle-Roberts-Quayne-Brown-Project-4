@@ -42,19 +42,19 @@ figure {
 //Hover & Focus States
 .a-btn:hover,
 .a-btn:focus {
-    background-color: $dark-color;
+    background-color: $secondary-accent;
 }
 
-.read-more:hover,
-.read-more:focus {
-    color: $light-color;
+.resto-tile .read-more:hover,
+.resto-tile .read-more:focus {
+    background-color: $secondary-accent;
 }
 
 i:hover,
 i:focus,
 footer a:hover,
 footer a:focus {
-   color: $primary-color;
+   color: $secondary-accent;
 }
 
 

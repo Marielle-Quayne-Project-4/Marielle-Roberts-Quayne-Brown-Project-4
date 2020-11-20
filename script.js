@@ -10,7 +10,7 @@ app.location = {};
 
 app.cuisines = [];
 
-// function to call the location API
+// 1st API Call / function to call the location API
 app.makeLocationApiRequest = (city) => {
     return $.ajax({
         url: `${app.baseEndpoint}/locations`,
@@ -26,7 +26,7 @@ app.makeLocationApiRequest = (city) => {
     })
 }
 
-
+//2nd API Call
 app.makeCuisineApiRequest = () => {
     return $.ajax({
         url: `${app.baseEndpoint}/cuisines`,
@@ -42,9 +42,45 @@ app.makeCuisineApiRequest = () => {
     })
 }
 
+//3rd API Call
+app.searchRestaurants = () => {
+    return $.ajax({
+        url: `${app.baseEndpoint}/search`,
+        method: 'get',
+        dataType: 'json',
+        headers: {
+            'user-key': app.apiKey
+        },
+        data: {
+            lat: `${app.location.lat}`,
+            lon: `${app.location.lon}`,
+            cuisines: `${55}`
+        }
+    })
+}
+
+app.getRestaurantSearchResults = () => {
+    const finalPromise = app.searchRestaurants();
+    finalPromise.done((result) => {
+        // console.log(result.restaurants[0]);
+        console.log(result.restaurants[0]);
+        console.log(result.restaurants[0].restaurant.name);
+        // console.log(result.restaurants[0].cuisines.featured_image);
+        // console.log(result.restaurants[0].name);
+    })
+}
+
+$('#food').on('change', function() {
+    const cuisineName = $(this).val();
+    // const test = $(this).data("cuisine_id");
+    // console.log(test);
+    $('#food option:selected').data("cuisine-id");
+    // console.log($(this).find("option"));
+})
+
 app.populateCuisineDropdown = () => {
     app.cuisines.forEach((cuisine) => {
-        console.log(cuisine);
+        // console.log(cuisine);
         const option = `<option value="${cuisine.name}" data-cuisine-id="${cuisine.id}">${cuisine.name}</option>`;
         $('#food').append(option);
     })
@@ -63,7 +99,8 @@ app.getCuisinesDetail = (promiseRes) => {
             // // console.log(cuisine_id, cuisine_name)
             // console.log(result);
         })
-        // console.log(app.cuisines);
+        app.populateCuisineDropdown();
+        app.getRestaurantSearchResults();
     })
 }
 
@@ -95,9 +132,9 @@ $('#city').on('change', function(){
     const locationRes = app.makeLocationApiRequest(city);
 
     app.getLocationDetails(locationRes);
-    setTimeout(function(){
-        app.populateCuisineDropdown();
-    },5000)
+    // setTimeout(function(){
+    //     app.populateCuisineDropdown();
+    // },5000)
 })
 
 // initialize our app

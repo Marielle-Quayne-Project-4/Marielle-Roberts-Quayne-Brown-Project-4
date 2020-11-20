@@ -6,13 +6,13 @@
         text-align: center;
         padding: 70px 60px;
         color: $light-color;
-        box-shadow: $secondary-color 10px 10px 10px;
+        box-shadow: $dark-color 10px 10px 10px;
 }
 
 
 
 .location  {
-    background-color: $dark-color;
+    background-color: $light-color;
     height: 80vh;
     display: flex;
     justify-content: space-evenly;
@@ -34,7 +34,7 @@
     text-align: center;
     padding: 70px 60px;
     color: $light-color;
-    box-shadow: $secondary-color 10px 10px 10px;
+    box-shadow: $dark-color 10px 10px 10px;
 }
 
 
