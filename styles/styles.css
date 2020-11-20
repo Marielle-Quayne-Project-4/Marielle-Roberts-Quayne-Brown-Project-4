@@ -199,6 +199,34 @@ select {
   color: #001F54;
 }
 
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #E76F51;
+}
+
+h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #E76F51;
+}
+
+.resto-info {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #0B132B;
+}
+
+.read-more {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #1150D0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -417,4 +445,52 @@ header i {
 
 .cuisine .cuisine-title {
   margin-bottom: 15px;
+}
+
+.restaurants img {
+  max-height: 380px;
+  width: 100%;
+}
+
+.restaurants .resto-tile {
+  width: calc(1400px / 3);
+  background-color: #f0f0f0;
+  padding: 15px;
+  padding-bottom: 30px;
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+
+.restaurants .resto-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.restaurants .fa-star {
+  margin-top: 10px;
+}
+
+.restaurants .resto-info {
+  margin-bottom: 15px;
+}
+
+.restaurants .read-more {
+  background-color: #E76F51;
+  padding: 10px 25px;
+  border-radius: 5px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-left: 35%;
+  -webkit-box-shadow: #001F54 10px 10px 10px;
+          box-shadow: #001F54 10px 10px 10px;
 }

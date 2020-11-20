@@ -23,3 +23,20 @@ select {
     padding: 2px;
     color: $secondary-color;
 }
+
+//Dynamic Tiles
+h3 {
+    @include font-specs ($rale, 3rem, 500, $primary-accent)
+}
+
+h4 {
+    @include font-specs ($rale, 1.8rem, 500, $primary-accent)
+}
+
+.resto-info {
+    @include font-specs ($sans, 1.6rem, 400, $dark-color)
+}
+
+.read-more {
+    @include font-specs ($rale, 1.8rem, 500, $primary-color)
+}
