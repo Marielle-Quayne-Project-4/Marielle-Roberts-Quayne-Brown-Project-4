@@ -224,7 +224,14 @@ h4 {
   font-family: "Raleway", sans-serif;
   font-size: 1.8rem;
   font-weight: 500;
-  color: #1150D0;
+  color: #0B132B;
+}
+
+h5 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #0B132B;
 }
 
 * {
@@ -316,33 +323,6 @@ header .start-button a {
   text-transform: uppercase;
   -webkit-box-shadow: #001F54 10px 10px 10px;
           box-shadow: #001F54 10px 10px 10px;
-}
-
-header .social-media-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: flex;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  background-color: #E76F51;
-  padding: 5px;
-  border: 2px solid #0B132B;
-}
-
-header i {
-  font-size: 4rem;
-  color: black;
 }
 
 .location-container {
@@ -493,4 +473,46 @@ header i {
   margin-left: 35%;
   -webkit-box-shadow: #001F54 10px 10px 10px;
           box-shadow: #001F54 10px 10px 10px;
+}
+
+footer {
+  background-color: #f0f0f0;
+}
+
+footer p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #0B132B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social-media-icons {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social-media-icons i {
+  font-size: 3rem;
+  padding: 5px;
 }

@@ -40,19 +40,5 @@ header{
         text-transform: uppercase;
         box-shadow: $secondary-color 10px 10px 10px;
     }
-
-    .social-media-icons{
-        @include flex-center(column);
-        // position: absolute;
-        display: flex;
-        align-self: flex-start;
-        background-color: $primary-accent;
-        padding: 5px;
-        border: 2px solid $dark-color;
-    }
     
-    i{
-        font-size: 4rem;
-        color: black;
-    }
 }
