@@ -43,7 +43,7 @@ app.makeCuisineApiRequest = () => {
 }
 
 //3rd API Call
-app.searchRestaurants = () => {
+app.searchRestaurants = (cuisineID) => {
     return $.ajax({
         url: `${app.baseEndpoint}/search`,
         method: 'get',
@@ -52,15 +52,15 @@ app.searchRestaurants = () => {
             'user-key': app.apiKey
         },
         data: {
-            lat: `${app.location.lat}`,
-            lon: `${app.location.lon}`,
-            cuisines: `${55}`
+            lat: app.location.lat,
+            lon: app.location.lon,
+            cuisines: cuisineID
         }
     })
 }
 
-app.getRestaurantSearchResults = () => {
-    const finalPromise = app.searchRestaurants();
+app.getRestaurantSearchResults = (id) => {
+    const finalPromise = app.searchRestaurants(id);
     finalPromise.done((result) => {
         // console.log(result.restaurants[0]);
         console.log(result.restaurants[0]);
@@ -70,14 +70,19 @@ app.getRestaurantSearchResults = () => {
         console.log(result.restaurants[0].restaurant.location.address);
         console.log(result.restaurants[0].restaurant.phone_numbers);
         console.log(result.restaurants[0].restaurant.user_rating.aggregate_rating);
-        // console.log(result.restaurants[0].name);
+        console.log(result.restaurants[0].restaurant.featured_image);
+        console.log(result.restaurants[0].restaurant.events_url);
+        
+
+
+        // display tiles
     })
 }
 
 $('#food').on('change', function() {
     const selectedOption = $(this).find('option:selected');
-    console.log(selectedOption.data('cuisine')) ;
-
+    const cuisineID = selectedOption.data('cuisine');
+    app.getRestaurantSearchResults(cuisineID);
 })
 
 app.populateCuisineDropdown = () => {
@@ -87,7 +92,6 @@ app.populateCuisineDropdown = () => {
         $('#food').append(option);
     })
     // console.log(app.cuisines.id);
-    
 }
 
 app.getCuisinesDetail = (promiseRes) => {
@@ -102,7 +106,7 @@ app.getCuisinesDetail = (promiseRes) => {
             // console.log(result);
         })
         app.populateCuisineDropdown();
-        app.getRestaurantSearchResults();
+        // app.getRestaurantSearchResults();
     })
 }
 
