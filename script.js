@@ -43,23 +43,27 @@ app.makeCuisineApiRequest = () => {
 }
 
 app.populateCuisineDropdown = () => {
-    let option = `<option value="${app.cuisines.name}" data-cuisine-id="${app.cuisines.id}">${app.cuisines.name}</option>`;
-
-    $('#food').append(option);
+    app.cuisines.forEach((cuisine) => {
+        console.log(cuisine);
+        const option = `<option value="${cuisine.name}" data-cuisine-id="${cuisine.id}">${cuisine.name}</option>`;
+        $('#food').append(option);
+    })
+    // console.log(app.cuisines.id);
+    
 }
 
 app.getCuisinesDetail = (promiseRes) => {
     promiseRes.done((result) => {
-
-        app.cuisines = result.cuisines.filter((item) => {
-            const {cuisine_id, cuisine_name} = item.cuisine
-            // console.log(cuisine_id, cuisine_name)
-
-            return{
-                id: cuisine_id,
-                name: cuisine_name
-            }
+        result.cuisines.forEach((item) => {
+            app.cuisines.push({
+                id: item.cuisine.cuisine_id,
+                name: item.cuisine.cuisine_name
+            });
+            // // const {cuisine_id, cuisine_name} = item.cuisine
+            // // console.log(cuisine_id, cuisine_name)
+            // console.log(result);
         })
+        // console.log(app.cuisines);
     })
 }
 
@@ -91,6 +95,9 @@ $('#city').on('change', function(){
     const locationRes = app.makeLocationApiRequest(city);
 
     app.getLocationDetails(locationRes);
+    setTimeout(function(){
+        app.populateCuisineDropdown();
+    },5000)
 })
 
 // initialize our app
