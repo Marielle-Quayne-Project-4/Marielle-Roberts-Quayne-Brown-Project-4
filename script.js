@@ -65,23 +65,25 @@ app.getRestaurantSearchResults = () => {
         // console.log(result.restaurants[0]);
         console.log(result.restaurants[0]);
         console.log(result.restaurants[0].restaurant.name);
-        // console.log(result.restaurants[0].cuisines.featured_image);
+        console.log(result.restaurants[0].restaurant.timings);
+        console.log(result.restaurants[0].restaurant.cuisines);
+        console.log(result.restaurants[0].restaurant.location.address);
+        console.log(result.restaurants[0].restaurant.phone_numbers);
+        console.log(result.restaurants[0].restaurant.user_rating.aggregate_rating);
         // console.log(result.restaurants[0].name);
     })
 }
 
 $('#food').on('change', function() {
-    const cuisineName = $(this).val();
-    // const test = $(this).data("cuisine_id");
-    // console.log(test);
-    $('#food option:selected').data("cuisine-id");
-    // console.log($(this).find("option"));
+    const selectedOption = $(this).find('option:selected');
+    console.log(selectedOption.data('cuisine')) ;
+
 })
 
 app.populateCuisineDropdown = () => {
     app.cuisines.forEach((cuisine) => {
         // console.log(cuisine);
-        const option = `<option value="${cuisine.name}" data-cuisine-id="${cuisine.id}">${cuisine.name}</option>`;
+        const option = `<option value="${cuisine.name}" data-cuisine="${cuisine.id}">${cuisine.name}</option>`;
         $('#food').append(option);
     })
     // console.log(app.cuisines.id);
