@@ -8,6 +8,8 @@ app.baseEndpoint = 'https://developers.zomato.com/api/v2.1';
 
 app.location = {};
 
+app.cuisines = [];
+
 // function to call the location API
 app.makeLocationApiRequest = (city) => {
     return $.ajax({
@@ -40,9 +42,24 @@ app.makeCuisineApiRequest = () => {
     })
 }
 
+app.populateCuisineDropdown = () => {
+    let option = `<option value="${app.cuisines.name}" data-cuisine-id="${app.cuisines.id}">${app.cuisines.name}</option>`;
+
+    $('#food').append(option);
+}
+
 app.getCuisinesDetail = (promiseRes) => {
     promiseRes.done((result) => {
-        console.log(result.cuisines)
+
+        app.cuisines = result.cuisines.filter((item) => {
+            const {cuisine_id, cuisine_name} = item.cuisine
+            // console.log(cuisine_id, cuisine_name)
+
+            return{
+                id: cuisine_id,
+                name: cuisine_name
+            }
+        })
     })
 }
 
@@ -64,7 +81,7 @@ app.getLocationDetails = (promiseObj) => {
     }).fail((err) => {
         console.log(err);
     })
-    console.log(app.location);
+    // console.log(app.location);
 }
 
 
