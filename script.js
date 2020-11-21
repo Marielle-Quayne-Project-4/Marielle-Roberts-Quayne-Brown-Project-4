@@ -1,16 +1,17 @@
-// initialize app object
+// Created namespace object
 const app = {};
 
 // API Key
 app.apiKey = 'e02f7bfd6a25d26426efce6d7b66eba1';
-// base endPoint
+
+// Base End Points
 app.baseEndpoint = 'https://developers.zomato.com/api/v2.1';
 
 app.location = {};
 
 app.cuisines = [];
 
-// 1st API Call / function to call the location API
+// 1st API Call
 app.makeLocationApiRequest = (city) => {
     return $.ajax({
         url: `${app.baseEndpoint}/locations`,
@@ -58,6 +59,7 @@ app.searchRestaurants = (cuisineID) => {
         }
     })
 }
+
 app.displayRestaurants = (restaurant) => {
 
     const {
@@ -83,8 +85,7 @@ app.displayRestaurants = (restaurant) => {
             </ul>
             <div class="read-more-container">
                 <a href="${events_url}" class="read-more">READ MORE</a>
-            </div>
-         `
+            </div>`
         $('.restaurant-list').append(tiles);
     }
 }
@@ -92,23 +93,13 @@ app.displayRestaurants = (restaurant) => {
 app.getRestaurantSearchResults = (id) => {
     const finalPromise = app.searchRestaurants(id);
     finalPromise.done((result) => {
-
-        // display tiles
         result.restaurants.forEach((item) => {
-
-            app.displayRestaurants(item.restaurant)
-            // item.restaurant;
-            // const {
-            //     name, timings, cuisines, phone_numbers, featured_image, events_url
-            // } = item.restaurant;
-
-            // const address = item.restaurant.location.address;
-            // const rating = item.restaurant.user_rating.aggregate_rating;
+        app.displayRestaurants(item.restaurant)
         })
     })
 }
 
-
+// Event Listener
 $('#food').on('change', function () {
     const selectedOption = $(this).find('option:selected');
     const cuisineID = selectedOption.data('cuisine');
@@ -146,16 +137,13 @@ app.getLocationDetails = (promiseObj) => {
             lon: longitude
         }
         const cuisinePromiseObj = app.makeCuisineApiRequest();
-
         app.getCuisinesDetail(cuisinePromiseObj);
-
     }).fail((err) => {
         console.log(err);
     })
-    // console.log(app.location);
 }
 
-
+//Event Listener
 $('#city').on('change', function () {
     const city = $(this).val();
 
@@ -167,13 +155,12 @@ $('#city').on('change', function () {
     // },5000)
 })
 
-// initialize our app
+//Initialize our app - left our console log there to confirm it is working each time
 app.init = () => {
     console.log("app is initialized!")
 }
 
-// document ready
+// Document Ready Function
 $(() => {
-    // call init function
     app.init()
 })
