@@ -63,19 +63,29 @@ app.getRestaurantSearchResults = (id) => {
     const finalPromise = app.searchRestaurants(id);
     finalPromise.done((result) => {
         // console.log(result.restaurants[0]);
-        console.log(result.restaurants[0]);
-        console.log(result.restaurants[0].restaurant.name);
-        console.log(result.restaurants[0].restaurant.timings);
-        console.log(result.restaurants[0].restaurant.cuisines);
-        console.log(result.restaurants[0].restaurant.location.address);
-        console.log(result.restaurants[0].restaurant.phone_numbers);
-        console.log(result.restaurants[0].restaurant.user_rating.aggregate_rating);
-        console.log(result.restaurants[0].restaurant.featured_image);
-        console.log(result.restaurants[0].restaurant.events_url);
-        
-
+        const {
+            name, timings, cuisines, phone_numbers, featured_image, events_url
+        } = result.restaurants[0].restaurant; 
+        const address = result.restaurants[0].restaurant.location.address;
+        const rating = result.restaurants[0].restaurant.user_rating.aggregate_rating;
 
         // display tiles
+        const tiles = `<li class="resto-tile">
+            <img src="${featured_image}" alt="${name}'s image">
+                <div class="resto-title-container">
+                    <h3>${name}</h3>
+                    <h4><i class="fas fa-star"></i>:${rating}</h4>
+                </div>
+                <ul class="resto-info">
+                    <li>Address: ${address}</li>
+                    <li>Hours: ${timings}</li>
+                    <li>Telephone: ${phone_numbers}</li>
+                    <li>Cuisines: ${cuisines}</li>
+                </ul>
+                <a href="${events_url}" class="read-more">READ MORE</a>
+                    </li>`;
+        
+        
     })
 }
 
