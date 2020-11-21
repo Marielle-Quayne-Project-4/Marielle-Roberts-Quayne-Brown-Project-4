@@ -208,7 +208,7 @@ h3 {
 
 h4 {
   font-family: "Raleway", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #E76F51;
 }
@@ -446,6 +446,7 @@ header .start-button a {
 
 .restaurants img {
   max-height: 380px;
+  height: 200px;
   width: 100%;
 }
 
@@ -453,16 +454,22 @@ header .start-button a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .restaurants .resto-tile {
   width: calc((100% / 3) - 30px);
+  min-width: 300px;
   background-color: #f0f0f0;
   padding: 15px;
   padding-bottom: 30px;
   margin: 15px;
+  position: relative;
 }
 
 .restaurants .resto-title-container {
@@ -479,7 +486,7 @@ header .start-button a {
 }
 
 .restaurants .resto-info {
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 .restaurants .read-more-container {
@@ -495,6 +502,8 @@ header .start-button a {
   background-color: #E76F51;
   padding: 10px 25px;
   border-radius: 5px;
+  position: absolute;
+  bottom: 18px;
   -webkit-box-shadow: #001F54 10px 10px 10px;
           box-shadow: #001F54 10px 10px 10px;
 }
@@ -539,4 +548,88 @@ footer p {
 .social-media-icons i {
   font-size: 3rem;
   padding: 5px;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3.8rem;
+  }
+  p {
+    font-size: 2.3rem;
+  }
+  a {
+    font-size: 2.4rem;
+  }
+  .start-button {
+    position: relative;
+    bottom: 20px;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  select {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+  p {
+    font-size: 2.5rem;
+  }
+  a {
+    font-size: 2.5rem;
+  }
+  .start-button {
+    position: relative;
+    bottom: 30px;
+  }
+  h2 {
+    font-size: 2.8rem;
+  }
+  select {
+    font-size: 2rem;
+  }
+  .social-media-icons i {
+    font-size: 2.2rem;
+  }
+  .footer-p {
+    font-size: 1.6rem;
+  }
+  .footer-p a {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 2.2rem;
+  }
+  a {
+    font-size: 2rem;
+  }
+  .start-button {
+    position: relative;
+    bottom: 50px;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  select {
+    font-size: 1.8rem;
+  }
+  h5 {
+    font-size: 1.4rem;
+  }
+  .social-media-icons i {
+    font-size: 2rem;
+  }
+  .footer-p a {
+    font-size: 1.4rem;
+  }
 }

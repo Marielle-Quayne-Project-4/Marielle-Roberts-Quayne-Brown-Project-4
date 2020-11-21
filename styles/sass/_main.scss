@@ -62,19 +62,23 @@
 .restaurants {
     img {
         max-height: 380px;
+        height: 200px;
         width: 100%;
     }
     .restaurant-list{
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
     }
 
     .resto-tile {
         width: calc((100% / 3) - 30px);
+        min-width: 300px;
         background-color: $light-color;
         padding: 15px;
         padding-bottom: 30px;
         margin: 15px;
+        position: relative;
     }
     .resto-title-container {
         display: flex;
@@ -85,7 +89,7 @@
         margin-top: 10px;
     }
     .resto-info {
-        margin-bottom: 15px;
+        margin-bottom: 35px;
     }
 
     .read-more-container {
@@ -96,6 +100,8 @@
         background-color: $primary-accent;
         padding: 10px 25px;
         border-radius: 5px;
+        position: absolute;
+        bottom: 18px;
 
         // display: inline-flex;
         // justify-content: center;

@@ -1,0 +1,91 @@
+@media (max-width: 1024px) {
+    //Header
+    h1 {
+        font-size: 3.8rem;
+    }
+    p {
+        font-size: 2.3rem;
+    }
+    a {
+        font-size: 2.4rem;
+    }
+    .start-button {
+        position: relative;
+        bottom: 20px;
+    }
+    //Location and Cuisine Sections
+    h2 {
+        font-size: 2.6rem;
+    }
+    select {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    //Header
+    h1 {
+        font-size: 4rem;
+    }
+    p {
+        font-size: 2.5rem;
+    }
+    a {
+        font-size: 2.5rem;
+    }
+    .start-button {
+        position: relative;
+        bottom: 30px;
+    }
+    //Location and Cuisine Sections
+    h2 {
+        font-size: 2.8rem;
+    }
+    select {
+        font-size: 2rem;
+    }
+    //Footer Section
+    .social-media-icons i {
+        font-size: 2.2rem;
+    }
+    .footer-p {
+        font-size: 1.6rem;
+    }
+    .footer-p a{
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    //Header
+    h1 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 2.2rem;
+    }
+    a {
+        font-size: 2rem;
+    }
+    .start-button {
+        position: relative;
+        bottom: 50px;
+    }
+    //Location and Cuisine Sections
+    h2 {
+        font-size: 2.2rem;
+    }
+    select {
+        font-size: 1.8rem;
+    }
+    //Footer Section
+    h5 {
+        font-size: 1.4rem;
+    }
+    .social-media-icons i {
+        font-size: 2rem;
+    }
+    .footer-p a{
+        font-size: 1.4rem;
+    }
+}
