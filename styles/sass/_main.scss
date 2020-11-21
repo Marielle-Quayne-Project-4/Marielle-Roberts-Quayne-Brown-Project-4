@@ -60,28 +60,25 @@
 
 //Dynamic Tile
 .restaurants {
-    img {
-        // max-height: 380px;
-        // // width: 100%;
-    }
+
     .restaurant-list{
         flex-wrap: wrap;
-        @include flex-center ();
+        @include flex-center();
+        align-items: stretch;
     }
-
-    .resto-tile {
-        width: calc((100% / 3) - 30px);
-        min-width: 300px;
+    .resto-tile{
         background-color: $light-color;
+        width: calc((100% / 3) - 30px);
+        min-width: 320px;
         padding: 15px;
         padding-bottom: 30px;
         margin: 15px;
-        position: relative;
-        figure {
-            overflow: hidden;
-            // height: 300px;
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
+
     .resto-title-container {
         display: flex;
         justify-content: space-between;
@@ -105,8 +102,8 @@
         background-color: $primary-accent;
         padding: 10px 25px;
         border-radius: 5px;
-        position: absolute;
-        bottom: 18px;
+        // position: absolute;
+        // bottom: 18px;
         box-shadow: $secondary-color 10px 10px 10px;
     }
 }

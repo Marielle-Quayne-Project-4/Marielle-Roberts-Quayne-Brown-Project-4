@@ -460,20 +460,31 @@ header .start-button a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .restaurants .resto-tile {
-  width: calc((100% / 3) - 30px);
-  min-width: 300px;
   background-color: #f0f0f0;
+  width: calc((100% / 3) - 30px);
+  min-width: 320px;
   padding: 15px;
   padding-bottom: 30px;
   margin: 15px;
-  position: relative;
-}
-
-.restaurants .resto-tile figure {
-  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .restaurants .resto-title-container {
@@ -513,8 +524,6 @@ header .start-button a {
   background-color: #E76F51;
   padding: 10px 25px;
   border-radius: 5px;
-  position: absolute;
-  bottom: 18px;
   -webkit-box-shadow: #001F54 10px 10px 10px;
           box-shadow: #001F54 10px 10px 10px;
 }
@@ -616,20 +625,6 @@ footer p {
   }
   select {
     font-size: 2rem;
-  }
-  h3 {
-    font-size: 2.5rem;
-  }
-  .resto-tile li {
-    font-size: 1.4rem;
-  }
-  .read-more a {
-    font-size: 1.6rem;
-    padding: 7px 12px;
-  }
-  .resto-tile {
-    margin-left: 0;
-    margin-right: 0;
   }
   .social-media-icons i {
     font-size: 2.2rem;

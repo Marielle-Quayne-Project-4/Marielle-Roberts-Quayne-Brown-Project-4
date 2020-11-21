@@ -71,20 +71,23 @@ app.displayRestaurants = (restaurant) => {
 
     //Error handling: included an if statement, so that the user does not experience an empty image with alt text
     if (featured_image !== '') {
-        const tiles = `<li class="resto-tile">
-            <figure>
-                <img src="${featured_image}" alt="${name}'s image">
-            </figure>
-            <div class="resto-title-container">
-                <h3>${name}</h3>
-                <h4>Rating:${rating}</h4>
+        const tiles = `
+        <li class="resto-tile">
+            <div>
+                <figure>
+                    <img src="${featured_image}" alt="${name}'s image">
+                </figure>
+                <div class="resto-title-container">
+                    <h3>${name}</h3>
+                    <h4>Rating:${rating}</h4>
+                </div>
+                <ul class="resto-info">
+                    <li>Address: ${address}</li>
+                    <li>Hours: ${timings}</li>
+                    <li>Telephone: ${phone_numbers}</li>
+                    <li>Cuisines: ${cuisines}</li>
+                </ul>
             </div>
-            <ul class="resto-info">
-                <li>Address: ${address}</li>
-                <li>Hours: ${timings}</li>
-                <li>Telephone: ${phone_numbers}</li>
-                <li>Cuisines: ${cuisines}</li>
-            </ul>
             <div class="read-more-container">
                 <a href="${events_url}" class="read-more">READ MORE</a>
             </div>`
