@@ -63,31 +63,43 @@ app.getRestaurantSearchResults = (id) => {
     const finalPromise = app.searchRestaurants(id);
     finalPromise.done((result) => {
         // console.log(result.restaurants[0]);
-        const {
-            name, timings, cuisines, phone_numbers, featured_image, events_url
-        } = result.restaurants[0].restaurant; 
-        const address = result.restaurants[0].restaurant.location.address;
-        const rating = result.restaurants[0].restaurant.user_rating.aggregate_rating;
+        // const {
+        //     name, timings, cuisines, phone_numbers, featured_image, events_url
+        // } = result.restaurants[0].restaurant; 
+        // const address = result.restaurants[0].restaurant.location.address;
+        // const rating = result.restaurants[0].restaurant.user_rating.aggregate_rating;
 
         // display tiles
-        const tiles = `<li class="resto-tile">
-            <img src="${featured_image}" alt="${name}'s image">
-                <div class="resto-title-container">
-                    <h3>${name}</h3>
-                    <h4><i class="fas fa-star"></i>:${rating}</h4>
-                </div>
-                <ul class="resto-info">
-                    <li>Address: ${address}</li>
-                    <li>Hours: ${timings}</li>
-                    <li>Telephone: ${phone_numbers}</li>
-                    <li>Cuisines: ${cuisines}</li>
-                </ul>
-                <a href="${events_url}" class="read-more">READ MORE</a>
-                    </li>`;
-        
-        
+        result.restaurants.forEach((item) => {
+            item.restaurant;
+            const {
+                name, timings, cuisines, phone_numbers, featured_image, events_url
+            } = item.restaurant;
+            // console.log(name, timings, cuisines, phone_numbers, featured_image, events_url);
+            const address = item.restaurant.location.address;
+            const rating = item.restaurant.user_rating.aggregate_rating;
+            //Error handling: included an if statement, so that the user does not experience an empty image with alt text
+            if (featured_image !== '') {
+                const tiles = `<li class="resto-tile">
+                <img src="${featured_image}" alt="${name}'s image">
+                    <div class="resto-title-container">
+                        <h3>${name}</h3>
+                        <h4><i class="fas fa-star"></i>:${rating}</h4>
+                    </div>
+                    <ul class="resto-info">
+                        <li>Address: ${address}</li>
+                        <li>Hours: ${timings}</li>
+                        <li>Telephone: ${phone_numbers}</li>
+                        <li>Cuisines: ${cuisines}</li>
+                    </ul>
+                    <a href="${events_url}" class="read-more">READ MORE</a>
+                        </li>`;
+                $('.restaurant-list').append(tiles);
+            }
+        })
     })
 }
+
 
 $('#food').on('change', function() {
     const selectedOption = $(this).find('option:selected');
@@ -96,12 +108,12 @@ $('#food').on('change', function() {
 })
 
 app.populateCuisineDropdown = () => {
+    $('#city').empty();
+    $('#food').html('<option value="city-choice" disabled>CHOOSE YOUR CITY!</option>');
     app.cuisines.forEach((cuisine) => {
-        // console.log(cuisine);
         const option = `<option value="${cuisine.name}" data-cuisine="${cuisine.id}">${cuisine.name}</option>`;
         $('#food').append(option);
     })
-    // console.log(app.cuisines.id);
 }
 
 app.getCuisinesDetail = (promiseRes) => {
@@ -111,12 +123,8 @@ app.getCuisinesDetail = (promiseRes) => {
                 id: item.cuisine.cuisine_id,
                 name: item.cuisine.cuisine_name
             });
-            // // const {cuisine_id, cuisine_name} = item.cuisine
-            // // console.log(cuisine_id, cuisine_name)
-            // console.log(result);
         })
         app.populateCuisineDropdown();
-        // app.getRestaurantSearchResults();
     })
 }
 
