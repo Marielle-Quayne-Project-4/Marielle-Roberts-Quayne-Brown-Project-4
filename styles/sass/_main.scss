@@ -61,14 +61,12 @@
 //Dynamic Tile
 .restaurants {
     img {
-        max-height: 380px;
-        height: 200px;
-        width: 100%;
+        // max-height: 380px;
+        // // width: 100%;
     }
     .restaurant-list{
-        display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
+        @include flex-center ();
     }
 
     .resto-tile {
@@ -79,11 +77,18 @@
         padding-bottom: 30px;
         margin: 15px;
         position: relative;
+        figure {
+            overflow: hidden;
+            // height: 300px;
+        }
     }
     .resto-title-container {
         display: flex;
         justify-content: space-between;
-        
+        flex-wrap: wrap;
+        h4 {
+            align-self: flex-end;
+        }
     }
     .fa-star {
         margin-top: 10px;
