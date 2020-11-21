@@ -537,15 +537,7 @@ footer p {
   font-size: 1.8rem;
   font-weight: 500;
   color: #0B132B;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
 }
 
 .social-media-icons {
@@ -568,6 +560,52 @@ footer p {
 .social-media-icons i {
   font-size: 3rem;
   padding: 5px;
+}
+
+.fab:hover {
+  -webkit-animation: shake 3s linear infinite;
+          animation: shake 3s linear infinite;
+  /* This is the line we added! */
+}
+
+@-webkit-keyframes shake {
+  0% {
+    top: 0;
+    /* note: transform's default value is none */
+    -webkit-transform: none;
+            transform: none;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+@keyframes shake {
+  0% {
+    top: 0;
+    /* note: transform's default value is none */
+    -webkit-transform: none;
+            transform: none;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  100% {
+    top: 100vh;
+  }
 }
 
 @media (max-width: 1024px) {

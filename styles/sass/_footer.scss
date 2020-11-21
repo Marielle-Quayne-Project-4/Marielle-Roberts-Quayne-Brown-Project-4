@@ -2,9 +2,7 @@
         background-color: $light-color;
         p {
             @include font-specs ($rale, 1.8rem, 500, $dark-color);
-            display:flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
         }
     }
     
@@ -18,4 +16,26 @@
             font-size: 3rem;
             padding: 5px;
         }
+    }
+
+    .fab:hover {
+        // font-size: 40px;
+        animation: shake 3s linear infinite; /* This is the line we added! */
+      }
+
+    @keyframes shake{
+        0% {
+            top: 0;
+            /* note: transform's default value is none */
+            transform: none;
+          }
+          10%, 30%, 50%, 70%, 90% {
+            transform: rotate(-30deg);
+          }
+          20%, 40%, 60%, 80% {
+            transform: rotate(20deg);
+          }
+          100% {
+            top: 100vh;
+          }
     }
