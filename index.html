@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,26 @@
     <!-- CSS Link -->
     <link rel="stylesheet" href="./styles/styles.css">
     <!-- Google Fonts Link -->
-    <link rel="preconnect" href="https://fonts.gstatic.com"><link
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,400;0,500;1,400&display=swap"
         rel="stylesheet">
     <!-- Font Awesome Link -->
     <script src="https://kit.fontawesome.com/5a7eceb3e6.js" crossorigin="anonymous"></script>
-    
+
 </head>
+
 <body>
     <!-- Landing spot -->
     <header>
-        
+
         <div class="wrapper">
             <div class="header-container">
 
                 <div class="title">
                     <h1>Resto Recco PRO</h1>
-                    <p>Tired of endless google searches and scrolling through uber eats? We're here to end your search!</p>
+                    <p>Tired of endless google searches and scrolling through uber eats? We're here to end your search!
+                    </p>
                 </div>
                 <div class="start-button">
                     <a href="#location" class="a-btn">Get started!</a>
@@ -40,7 +44,7 @@
                     <div class="location-title">
                         <h2>WHERE ARE YOU LOCATED?</h2>
                     </div>
-                    <label for="city" class="sr-only" >Cities</label>
+                    <label for="city" class="sr-only">Cities</label>
                     <!-- Q - the placeholder isn't working, help? -->
                     <select name="options" id="city" placeholder="Your city!">
                         <option value="city-choice" disabled>CHOOSE YOUR CITY!</option>
@@ -79,6 +83,7 @@
                     <label for="food" class="sr-only"></label>
                     <select name="options" id="food" placeholder="I'm hungry!">
                         <option value="cuisine-choice" disabled>PICK YOUR CUISINE!</option>
+
                     </select>
                 </div>
             </div>
@@ -88,6 +93,51 @@
         <section id="restaurants" class="restaurants">
             <div class="wrapper">
                 <ul class="restaurant-list">
+                    <!-- <li class="resto-tile">
+                        <img src="./jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="${name}'s image">
+                        <div class="resto-title-container">
+                            <h3>${name}</h3>
+                            <h4><i class="fas fa-star"></i>:${rating}</h4>
+                        </div>
+                        <ul class="resto-info">
+                            <li>Address: ${address}</li>
+                            <li>Hours: ${timings}</li>
+                            <li>Telephone: ${phone_numbers}</li>
+                            <li>Cuisines: ${cuisines}</li>
+                        </ul>
+                        <div class="read-more-container">
+                            <a href="#" class="read-more">READ MORE</a>
+
+                        </div>
+                    </li>
+                    <li class="resto-tile">
+                        <img src="./jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="${name}'s image">
+                        <div class="resto-title-container">
+                            <h3>${name}</h3>
+                            <h4><i class="fas fa-star"></i>:${rating}</h4>
+                        </div>
+                        <ul class="resto-info">
+                            <li>Address: ${address}</li>
+                            <li>Hours: ${timings}</li>
+                            <li>Telephone: ${phone_numbers}</li>
+                            <li>Cuisines: ${cuisines}</li>
+                        </ul>
+                        <a href="#" class="read-more">READ MORE</a>
+                    </li>
+                    <li class="resto-tile">
+                        <img src="./jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="${name}'s image">
+                        <div class="resto-title-container">
+                            <h3>${name}</h3>
+                            <h4><i class="fas fa-star"></i>:${rating}</h4>
+                        </div>
+                        <ul class="resto-info">
+                            <li>Address: ${address}</li>
+                            <li>Hours: ${timings}</li>
+                            <li>Telephone: ${phone_numbers}</li>
+                            <li>Cuisines: ${cuisines}</li>
+                        </ul>
+                        <a href="#" class="read-more">READ MORE</a>
+                    </li> -->
                 </ul>
             </div>
         </section>
@@ -105,7 +155,7 @@
                     <a href="#"><i class="fab fa-instagram-square"></i></a>
                     <a href="#"><i class="fab fa-snapchat-square"></i></a>
                 </div>
-                
+
             </div>
             <!-- Wrapped our names in anchors so that we could eventually link to our portfolio's  -->
             <p class="footer-p">Created by: <a href="#"> Marielle Roberts </a> & <a href="#">Quayne Brown</a></p>
@@ -119,4 +169,5 @@
     <script src='https://code.jquery.com/jquery-3.4.0.min.js'></script>
     <script src="script.js"></script>
 </body>
+
 </html>

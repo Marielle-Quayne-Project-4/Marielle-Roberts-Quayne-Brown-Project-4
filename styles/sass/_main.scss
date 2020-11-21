@@ -64,17 +64,22 @@
         max-height: 380px;
         width: 100%;
     }
+    .restaurant-list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .resto-tile {
-        width: calc(1400px / 3);
+        width: calc((100% / 3) - 30px);
         background-color: $light-color;
         padding: 15px;
         padding-bottom: 30px;
-        margin-top: 35px;
-        margin-bottom: 30px;
+        margin: 15px;
     }
     .resto-title-container {
         display: flex;
         justify-content: space-between;
+        
     }
     .fa-star {
         margin-top: 10px;
@@ -83,14 +88,19 @@
         margin-bottom: 15px;
     }
 
+    .read-more-container {
+        display: flex;
+        justify-content: center;
+    }
     .read-more {
         background-color: $primary-accent;
         padding: 10px 25px;
         border-radius: 5px;
-        display: inline-flex;
-        justify-content: center;
-        align-self: center;
-        margin-left: 35%;
+
+        // display: inline-flex;
+        // justify-content: center;
+        // align-self: center;
+        // margin-left: 35%;
         box-shadow: $secondary-color 10px 10px 10px;
     }
 }

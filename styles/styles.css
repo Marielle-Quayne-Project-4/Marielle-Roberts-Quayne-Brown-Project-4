@@ -449,13 +449,20 @@ header .start-button a {
   width: 100%;
 }
 
+.restaurants .restaurant-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .restaurants .resto-tile {
-  width: calc(1400px / 3);
+  width: calc((100% / 3) - 30px);
   background-color: #f0f0f0;
   padding: 15px;
   padding-bottom: 30px;
-  margin-top: 35px;
-  margin-bottom: 30px;
+  margin: 15px;
 }
 
 .restaurants .resto-title-container {
@@ -475,19 +482,19 @@ header .start-button a {
   margin-bottom: 15px;
 }
 
+.restaurants .read-more-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .restaurants .read-more {
   background-color: #E76F51;
   padding: 10px 25px;
   border-radius: 5px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  margin-left: 35%;
   -webkit-box-shadow: #001F54 10px 10px 10px;
           box-shadow: #001F54 10px 10px 10px;
 }
