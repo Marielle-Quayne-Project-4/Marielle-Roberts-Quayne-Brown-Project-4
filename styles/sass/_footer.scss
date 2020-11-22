@@ -1,5 +1,7 @@
     footer {
         background-color: $light-color;
+        padding: 60px 0;
+        margin-top: 50px;
         p {
             @include font-specs ($rale, 1.8rem, 500, $dark-color);
             text-align: center;
@@ -19,14 +21,12 @@
     }
 
     .fab:hover {
-        // font-size: 40px;
-        animation: shake 3s linear infinite; /* This is the line we added! */
+        animation: shake 3s linear infinite; 
       }
 
     @keyframes shake{
         0% {
             top: 0;
-            /* note: transform's default value is none */
             transform: none;
           }
           10%, 30%, 50%, 70%, 90% {

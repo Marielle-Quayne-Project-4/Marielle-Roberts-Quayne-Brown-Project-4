@@ -30,7 +30,8 @@ h3 {
 }
 
 h4 {
-    @include font-specs ($rale, 1.5rem, 500, $primary-accent)
+    @include font-specs ($rale, 1.5rem, 400, $primary-accent);
+    line-height: 1.4;
 }
 
 .resto-info {
