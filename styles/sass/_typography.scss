@@ -47,3 +47,7 @@ h4 {
 h5 {
     @include font-specs ($rale, 1.8rem, 500, $dark-color)
 }
+
+.capitalize{
+    text-transform: capitalize;
+}

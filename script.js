@@ -112,6 +112,7 @@ app.getRestaurantSearchResults = (id) => {
     const finalPromise = app.searchRestaurants(id);
     finalPromise.done((result) => {
         if(result.restaurants.length > 0){
+            $('.restaurant-heading-container').html(`<h2>Here is a list of <span class="capitalize">${app.selectedCuisineName}</span> restaurants in and around <span class="capitalize">${app.selectedLocation}</span></h2>`)
             result.restaurants.forEach((item) => {
             app.displayRestaurants(item.restaurant)
             })
@@ -122,6 +123,8 @@ app.getRestaurantSearchResults = (id) => {
 }
 
 app.populateCuisineDropdown = () => {
+    $('#food').empty();
+    $('#food').html('<option value="cuisine-choice" selected="selected">PICK YOUR CUISINE!</option>')
     app.cuisines.forEach((cuisine) => {
         const option = `<option value="${cuisine.name}" data-cuisine="${cuisine.id}">${cuisine.name}</option>`;
         $('#food').append(option);
@@ -183,11 +186,30 @@ app.showCuisineSection = ($cuisineSection) => {
 //Event Listener 'on change'
 app.eventListeners = function(){
     const $cuisineDropdown = $('#food');
-    const $cuisineSection = $('#cuisine')
+    const $locationSection = $('#location');
+    const $cuisineSection = $('#cuisine');
+    const $getStarted = $('header a');
+    const $restaurants = $('#restaurants');
+
+    $getStarted.on('click', () => {
+        $locationSection.removeClass('hide-section');
+        $cuisineSection.addClass('hide-section');
+        $('.restaurant-heading-container').empty();
+        $('.restaurant-list').empty();
+        $('html, body').animate({
+            scrollTop: $locationSection.offset().top
+        }, 1000);
+    })
 
     // Event Listener for when the location/cities dropdown menu changes
     $('#city').on('change', function () {
-        $cuisineDropdown.empty();
+        
+        $locationSection.addClass('hide-section');
+        $cuisineSection.removeClass('hide-section');
+
+        $('html, body').animate({
+            scrollTop: $cuisineSection.offset().top
+        }, 1500);
 
         const isCitySelected = $('#city option:selected').val() !== 'city-choice'
 
@@ -213,6 +235,10 @@ app.eventListeners = function(){
         const cuisineID = $selectedOption.data('cuisine');
         app.selectedCuisineName = $selectedOption.val();
         app.getRestaurantSearchResults(cuisineID);
+
+        $('html, body').animate({
+            scrollTop: $restaurants.offset().top
+        }, 2000);
     })
 }
 

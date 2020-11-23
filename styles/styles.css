@@ -235,6 +235,10 @@ h5 {
   color: #0B132B;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -344,32 +348,32 @@ header .start-button a {
 }
 
 .location-container {
-  max-width: 700px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   text-align: center;
   padding: 70px 60px;
   color: #f0f0f0;
-  -webkit-box-shadow: #0B132B 10px 10px 10px;
-          box-shadow: #0B132B 10px 10px 10px;
 }
 
 .location {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #f0f0f0;
-  height: 80vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .location .wrapper {
@@ -382,14 +386,23 @@ header .start-button a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.location .location-title {
+.location .title {
   margin-bottom: 15px;
+}
+
+.hide-section {
+  visibility: hidden;
+  height: 0;
+}
+
+.dropdown-container {
+  position: relative;
 }
 
 .cuisine-container {
@@ -404,18 +417,17 @@ header .start-button a {
 }
 
 .hide {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 
 .cuisine {
-  background-color: #e9c46a;
-  background-image: url("../assets/brooke-lark-wMzx2nBdeng-unsplash.jpg");
+  background-color: #f0f0f0;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 80vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -447,8 +459,16 @@ header .start-button a {
           flex-direction: column;
 }
 
-.cuisine .cuisine-title {
-  margin-bottom: 15px;
+.restaurants .restaurant-heading-container {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.restaurants .restaurant-heading-container h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 5rem;
+  font-weight: 600;
+  color: #E76F51;
 }
 
 .restaurants .restaurant-list {

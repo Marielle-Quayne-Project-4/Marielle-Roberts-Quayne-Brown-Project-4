@@ -38,14 +38,14 @@
     <main>
         <!-- "Where are you located?" -->
         <section id="location" class="location">
-            <div class="wrapper">
+            <div class="wrapper dropdown-container">
                 <div class="location-container">
-                    <div class="location-title">
+                    <div class="location-title title">
                         <h2>WHERE ARE YOU LOCATED?</h2>
                     </div>
                     <label for="city" class="sr-only">Cities</label>
                     <select name="options" id="city">
-                        <option value="city-choice" selected="selected">CHOOSE YOUR CITY!</option>
+                        <!-- <option value="city-choice" selected="selected">CHOOSE YOUR CITY!</option> -->
                         <option value="ajax">AJAX</option>
                         <option value="brampton">BRAMPTON</option>
                         <option value="cambridge">CAMBRIDGE</option>
@@ -72,7 +72,7 @@
         </section>
 
         <!-- "What type of cuisine?" -->
-        <section id="cuisine" class="cuisine hide">
+        <section id="cuisine" class="cuisine hide-section">
             <div class="wrapper">
                 <div class="cuisine-container">
                     <div class="cuisine-title">
@@ -89,6 +89,7 @@
         <!-- Restaurant Tiles (Dynamic HTML)-->
         <section id="restaurants" class="restaurants">
             <div class="wrapper">
+                <div class="restaurant-heading-container"></div>
                 <ul class="restaurant-list">
                 </ul>
             </div>
@@ -108,7 +109,6 @@
                     <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
                     <a href="https://www.snapchat.com/" target="_blank"><i class="fab fa-snapchat-square"></i></a>
                 </div>
-
             </div>
             <!-- Wrapped our names in anchors so that we could eventually link to our portfolio's  -->
             <p class="footer-p">
