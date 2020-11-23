@@ -42,8 +42,9 @@ app.makeCuisineApiRequest = () => {
             'user-key': app.apiKey
         },
         data: {
-            lat: `${app.location.lat}`,
-            lon: `${app.location.lon}`
+            city_id: app.location.cityId,
+            lat: app.location.lat,
+            lon: app.location.lon
         }
     })
 }
@@ -58,9 +59,12 @@ app.searchRestaurants = (cuisineID) => {
             'user-key': app.apiKey
         },
         data: {
+            entity_id: app.location.EntityId,
             lat: app.location.lat,
             lon: app.location.lon,
             cuisines: cuisineID,
+            radius: 2000, // 2000 meters
+            count: 50,
             sort: 'rating'
         }
     })
@@ -126,6 +130,7 @@ app.populateCuisineDropdown = () => {
 
 app.getCuisinesDetail = (promiseRes) => {
     promiseRes.done((result) => {
+        app.cuisines = [];
         result.cuisines.forEach((item) => {
             app.cuisines.push({
                 id: item.cuisine.cuisine_id,
@@ -139,16 +144,40 @@ app.getCuisinesDetail = (promiseRes) => {
 app.getLocationDetails = (promiseObj) => {
     promiseObj.done((result) => {
         // destructuring the location object
-        const { entity_id, title, latitude, longitude } = result.location_suggestions[0];
+        const { city_id, entity_id, title, latitude, longitude } = result.location_suggestions[0];
         app.location = {
             EntityId :entity_id,
+            cityId: city_id,
             cityName: title,
             lat: latitude,
             lon: longitude
         }
+        console.log(app.location.EntityId, app.location.cityName, app.location.lat, app.location.lon)
+        // store the response from the cuisine API call
+        const cuisinePromiseObj = app.makeCuisineApiRequest();
+        // do some stuff when the promise is fulfill
+        app.getCuisinesDetail(cuisinePromiseObj);
     }).fail((err) => {
         console.log(err);
     })
+}
+
+// hide cuisine drop down menu when no city is selected
+app.hideCuisineSection = ($cuisineSection) => {
+    $cuisineSection.slideUp('fast', function () {
+        $cuisineSection.addClass('hide')
+            .slideDown(0);
+        app.isVisible = false
+    });
+}
+
+// show cuisine drop down menu when a city is selected
+app.showCuisineSection = ($cuisineSection) => {
+    $cuisineSection.slideUp(0, function () {
+        $cuisineSection.removeClass('hide')
+            .slideDown('fast');
+        app.isVisible = true
+    });
 }
 
 //Event Listener 'on change'
@@ -156,33 +185,17 @@ app.eventListeners = function(){
     const $cuisineDropdown = $('#food');
     const $cuisineSection = $('#cuisine')
 
-    // enable dropdown for the user to select a cuisine only if a location is selected
-
-    // 
+    // Event Listener for when the location/cities dropdown menu changes
     $('#city').on('change', function () {
+        $cuisineDropdown.empty();
+
         const isCitySelected = $('#city option:selected').val() !== 'city-choice'
 
             if(app.isVisible  == false){
-                if (!isCitySelected) {
-
-                    $cuisineSection.slideUp('fast',function() {
-                        $cuisineSection.addClass('hide')
-                           .slideDown(0);
-                           app.isVisible = false
-                    });
-                  } else {
-                    $cuisineSection.slideUp(0,function() {
-                        $cuisineSection.removeClass('hide')
-                           .slideDown('fast');
-                        app.isVisible = true
-                    });
-                  }                  
+                !isCitySelected ?  app.hideCuisineSection($cuisineSection) :                 
+                    app.showCuisineSection($cuisineSection);         
             }else if (app.isVisible && !isCitySelected){
-                $cuisineSection.slideUp('fast',function() {
-                    $cuisineSection.addClass('hide')
-                       .slideDown(0);
-                       app.isVisible = false
-                });
+                app.hideCuisineSection($cuisineSection);
             }
 
         app.selectedLocation = $(this).val();
@@ -193,7 +206,7 @@ app.eventListeners = function(){
         app.getLocationDetails(locationRes);
     })
 
-    // Event Listener
+    // Event Listener for when the cuisine dropdown menu changes
     $cuisineDropdown.on('change', function () {
         $('.restaurant-list').empty();
         const $selectedOption = $(this).find('option:selected');
@@ -207,12 +220,6 @@ app.eventListeners = function(){
 //Initialize our app - left our console log there to confirm it is working each time
 app.init = () => {
     app.eventListeners();
-
-    // store the response from the cuisine API call
-    const cuisinePromiseObj = app.makeCuisineApiRequest();
-
-    // do some stuff when the promise is fulfill
-    app.getCuisinesDetail(cuisinePromiseObj);
 }
 
 // Document Ready Function
